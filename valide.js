@@ -30,7 +30,7 @@ function Validator() {
     //nom
     var regEmail = new RegExp('^[0-9a-z._-]*[@]{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$','i');
     testemail = regEmail.test(email);
-    if(nom.length<=2 ||!isNaN(nom)){
+    if(nom.length<=3 ||!isNaN(nom)){
          ernom.innerText=" nom pas valid ";
          ernom.style.color="red";
       }else{
@@ -38,7 +38,7 @@ function Validator() {
          ernom.style.color="green";
       }
       //prenom
-      if(prenom.length<=2 ||!isNaN(prenom)){
+      if(prenom.length<=3 ||!isNaN(prenom)){
          erpre.innerText=" prenom pas valid ";
          erpre.style.color="red";
       }else{
@@ -74,7 +74,7 @@ function Validator() {
          erdn.innerText=" obligatoire";
          erdn.style.color="red";
       }
-      else if(dif<13){
+      else if(dif<18){
          erdn.innerText=" age pas valid";
          erdn.style.color="red";
       }else{
@@ -116,10 +116,22 @@ function Validator() {
       g = document.querySelector('input[name = "g"]:checked');
       if(g ==null){  
          vg.innerText=" obligatoire";
+         vg.style.color="red";
       } else {
          vg.innerText="⁎"; 
          vg.style.color=" green";
       }
+
+      // chekbox
+       pcontqct = document.querySelector('input[name= "pfcontact"]:checked');
+       erpco = document.getElementById("erpfcontact"); 
+        if(pcontqct==null){  
+         erpco.innerText=" obligatoire";
+         erpco.style.color="red";
+         }else{
+            erpco.innerText="⁎"; 
+            erpco.style.color=" green";
+         }
       // pays
 
       if( p == "" ) {
